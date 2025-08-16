@@ -1,9 +1,9 @@
 import java.sql.Array
 
-fun productofArray(){
+fun main(){
 
     var nums: ArrayList<Int> = arrayListOf(1,2,3,4)
-    println(productarray(nums))
+    print(productarray(nums).joinToString())
 
 
 }
