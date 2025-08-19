@@ -1,13 +1,7 @@
 fun main(){
 
-    val arr=arrayOf(1,3,5,7)
+    val arr=arrayOf(1,3,5,6)
     val target=7
-    for(i in 0 until arr.size){
-
-        if (arr[i]==target){
-
-        }
-    }
 
     println(search(arr,target))
 
@@ -15,13 +9,20 @@ fun main(){
 
 fun search(arr: Array<Int>,target: Int): Int{
 
-    var index=0
+    var left=0
+    var right=arr.size-1
 
-    for(i in 0 until arr.size){
-        if (arr[i]==target){
-           return i
+    while (left<=right){
+        var mid=left + (right-left)/2
+
+        if (arr[mid]==target){
+            return mid
+        }else if (arr[mid]<target){
+            left=mid+1
+        }else{
+            right=mid-1
         }
-    }
 
-    return -1
+    }
+    return left
 }
